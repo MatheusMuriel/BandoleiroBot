@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
+require('dotenv').config()
 
 const bot = new Discord.Client();
-bot.login("NzMzMDEzNzEwMjkzMDQxMTcy.Xw8-QA.00f_dwMe3CVN5eYNfjNiiEDx95U");
+bot.login(process.env.TOKEN);
 
 let canaisDeVoz;
 
