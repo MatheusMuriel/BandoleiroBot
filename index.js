@@ -4,18 +4,6 @@ require('dotenv').config()
 const bot = new Discord.Client();
 bot.login(process.env.TOKEN);
 
-let canaisDeVoz;
-
-bot.once('ready', () => {
-  canaisDeVoz = bot.channels.cache.filter(c => c.type === "voice");
-});
-
-bot.on('message', msg => {
-  if (msg.content === "!oi") {
-    msg.reply("Hello World!");
-  }
-});
-
 bot.on('voiceStateUpdate', (oldState, newState) => {
   if (newState.channel) {
     bot.channels.fetch(newState.channelID)
